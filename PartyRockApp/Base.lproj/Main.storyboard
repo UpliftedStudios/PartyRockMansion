@@ -40,24 +40,10 @@
                                         <rect key="frame" x="8" y="3" width="359" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4D-x2-8V3">
-                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="36"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Top Videos">
                                                     <color key="titleColor" red="0.82263245558375631" green="0.24731945980284392" blue="0.76669441159714968" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D6-Ey-hU0">
-                                                <rect key="frame" x="119.5" y="0.0" width="120" height="36"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                <state key="normal" title="Top Songs">
-                                                    <color key="titleColor" red="0.63394273479999996" green="0.61312529059999998" blue="0.62699846380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-C3-liZ">
-                                                <rect key="frame" x="239.5" y="0.0" width="119.5" height="36"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                <state key="normal" title="Events">
-                                                    <color key="titleColor" red="0.63394273478781726" green="0.61312529062036636" blue="0.62699846381456137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -82,7 +68,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="mLO-qz-rII">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="mLO-qz-rII" customClass="RoundedImage">
                                                     <rect key="frame" x="8" y="9" width="60" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="JhC-bp-W8p"/>
@@ -158,14 +144,30 @@
                                     <constraint firstAttribute="height" constant="205" id="8PF-vH-w9F"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-p1-CMb">
+                                <rect key="frame" x="5" y="255" width="365" height="129"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="129" id="LRj-3d-rgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ab9-p1-CMb" secondAttribute="trailing" constant="5" id="0wV-tp-vDT"/>
+                            <constraint firstItem="ab9-p1-CMb" firstAttribute="leading" secondItem="u3B-XV-PN1" secondAttribute="leading" constant="5" id="aRz-m0-hDy"/>
                             <constraint firstItem="DmI-HD-wpl" firstAttribute="leading" secondItem="u3B-XV-PN1" secondAttribute="leading" id="elm-FI-56M"/>
                             <constraint firstItem="DmI-HD-wpl" firstAttribute="top" secondItem="u3B-XV-PN1" secondAttribute="top" id="h3i-YM-oo3"/>
                             <constraint firstAttribute="trailing" secondItem="DmI-HD-wpl" secondAttribute="trailing" id="oMG-bp-sgy"/>
+                            <constraint firstItem="ab9-p1-CMb" firstAttribute="top" secondItem="DmI-HD-wpl" secondAttribute="bottom" constant="50" id="yFf-ek-wsW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLbl" destination="ab9-p1-CMb" id="hGs-V3-16y"/>
+                        <outlet property="webView" destination="DmI-HD-wpl" id="qf7-es-91S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jc8-Ie-4Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
